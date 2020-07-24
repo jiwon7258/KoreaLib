@@ -16,13 +16,13 @@ def main() :
 
     # 스마트도서대출반납기 리스트를 가져온다
 
-    # res = requests.get('http://163.152.81.120/wssl/WSSLLOG.asp?QUERY=Y')
-    # soup = BeautifulSoup(res.content, 'html.parser')
-    # tables = soup.select('table')
+    res = requests.get('http://163.152.81.120/wssl/WSSLLOG.asp?QUERY=Y')
+    soup = BeautifulSoup(res.content, 'html.parser')
+    tables = soup.select('table')
 
-    with open(BASE_DIR + os.path.sep + "WSSL1.html") as file :
-        soup = BeautifulSoup(file, "html.parser");
-        tables = soup.select('table');
+    # with open(BASE_DIR + os.path.sep + "WSSL1.html") as file :
+    #     soup = BeautifulSoup(file, "html.parser");
+    #     tables = soup.select('table');
 
     # 테이블 객체를 문자열로 변환
     wssl_html = str(tables)
